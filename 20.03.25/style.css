@@ -1,0 +1,88 @@
+body {
+    background-color: yellow;
+}
+
+.container{
+    /* aby elementy układały się w jednej linii lub kolumnie.*/
+    display: flex;
+    flex-direction: column; /* Ustawianie elementow jeden pod drugim */
+    justify-content: center; /* Wysrodkowanie w poziomie */
+    align-items: center; /* Wyśrodkowanie pionowe */
+    height: 70vh; /* Pelna wysokosc ekranu */
+}
+h1 {
+    background-color: white;
+    color: red;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 100px auto;
+    padding: 20px;
+    width: fit-content;
+    border: 5px solid black;
+    /* Zaokraglenie ramek */
+    border-radius: 30px;
+    /* Przesuniecie x,y rozmycie, kolor */
+    text-shadow: 3px 3px 5px gray;
+    box-shadow: 5px 5px 10px black;
+}
+a{
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+a:hover{
+    background-color: red;
+    color: yellow;
+    text-decoration: underline;
+}
+a:active{
+    color:green;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1, a{
+    animation: fadeIn 1s ease-in-out;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+    gap: 20px; /* odstep miedzy elementami */
+    padding: 20px;
+}
+
+.item {
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.item:hover{
+    transform: scale(1.1); /* Powiekszenie o 10% */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+.item:active{
+    transform: scale(0.95);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
